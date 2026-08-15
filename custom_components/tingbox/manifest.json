@@ -1,0 +1,13 @@
+{
+  "domain": "tingbox",
+  "name": "Tingbox",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://github.com/trankhanhduy2912/tingbox-hass",
+  "integration_type": "hub",
+  "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/trankhanhduy2912/tingbox-hass/issues",
+  "loggers": ["paho.mqtt.client", "custom_components.tingbox"],
+  "requirements": ["paho-mqtt==2.1.0"],
+  "version": "0.2.0"
+}

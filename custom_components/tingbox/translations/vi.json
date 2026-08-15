@@ -1,0 +1,120 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Kết nối Tingbox",
+        "description": "Đăng nhập bằng tài khoản Tingbox.vn.",
+        "data": {
+          "username": "Tài khoản",
+          "password": "Mật khẩu"
+        }
+      },
+      "mqtt_tls": {
+        "title": "Xác nhận TLS MQTT cũ",
+        "description": "Broker MQTT của Tingbox trả chứng chỉ không vượt qua xác minh CA chuẩn. Ứng dụng chính thức chấp nhận chứng chỉ này; chỉ bật tùy chọn nếu bạn tin cậy mạng và broker.",
+        "data": {
+          "allow_insecure_mqtt": "Cho phép MQTT TLS không xác minh chứng chỉ"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Đăng nhập lại Tingbox",
+        "description": "Phiên đăng nhập Tingbox đã hết hạn.",
+        "data": {
+          "password": "Mật khẩu"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Không thể kết nối tới máy chủ Tingbox.",
+      "invalid_auth": "Tài khoản hoặc mật khẩu không đúng.",
+      "invalid_response": "Máy chủ Tingbox trả dữ liệu không hợp lệ.",
+      "mqtt_tls_required": "Hãy xác nhận tùy chọn TLS cũ để tiếp tục."
+    },
+    "abort": {
+      "already_configured": "Tài khoản Tingbox này đã được cấu hình.",
+      "reauth_successful": "Đăng nhập Tingbox thành công."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Tùy chọn Tingbox",
+        "data": {
+          "allow_insecure_mqtt": "Cho phép TLS MQTT không xác minh chứng chỉ",
+          "scan_interval": "Chu kỳ cập nhật REST (phút)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "mqtt_connection": {
+        "name": "Kết nối MQTT"
+      },
+      "qr_default_configured": {
+        "name": "QR mặc định đã cấu hình"
+      },
+      "brightness_capability": {
+        "name": "Hỗ trợ điều chỉnh độ sáng"
+      }
+    },
+    "button": {
+      "refresh_cloud_data": {
+        "name": "Làm mới dữ liệu cloud"
+      }
+    },
+    "event": {
+      "payment_received": {
+        "name": "Nhận giao dịch"
+      }
+    },
+    "number": {
+      "display_brightness": {
+        "name": "Độ sáng màn hình"
+      }
+    },
+    "switch": {
+      "phone_announcements": {
+        "name": "Âm báo giao dịch trên ứng dụng"
+      }
+    },
+    "sensor": {
+      "total_amount": {
+        "name": "Tổng tiền hiện tại"
+      },
+      "transaction_count": {
+        "name": "Số giao dịch"
+      },
+      "current_mode": {
+        "name": "Chế độ hiện tại"
+      },
+      "last_payment_amount": {
+        "name": "Giao dịch gần nhất"
+      },
+      "last_payment_time": {
+        "name": "Thời điểm giao dịch gần nhất"
+      },
+      "device_status": {
+        "name": "Trạng thái loa"
+      },
+      "device_status_text": {
+        "name": "Mô tả trạng thái"
+      },
+      "device_category": {
+        "name": "Loại loa"
+      },
+      "device_channel": {
+        "name": "Kênh thiết bị"
+      },
+      "device_count": {
+        "name": "Số loa được gán"
+      },
+      "brightness_device_count": {
+        "name": "Số loa hỗ trợ độ sáng"
+      },
+      "last_cloud_update": {
+        "name": "Cập nhật cloud gần nhất"
+      }
+    }
+  }
+}
