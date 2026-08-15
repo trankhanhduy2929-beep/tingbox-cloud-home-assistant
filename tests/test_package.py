@@ -20,6 +20,16 @@ class TingboxPackageTests(unittest.TestCase):
         self.assertEqual(manifest["version"], "0.2.0")
         self.assertTrue(manifest["config_flow"])
         self.assertIn("paho-mqtt==2.1.0", manifest["requirements"])
+        self.assertEqual(
+            manifest["documentation"],
+            "https://github.com/trankhanhduy2929-beep/"
+            "tingbox-cloud-home-assistant",
+        )
+        self.assertEqual(
+            manifest["issue_tracker"],
+            "https://github.com/trankhanhduy2929-beep/"
+            "tingbox-cloud-home-assistant/issues",
+        )
 
     def test_hacs_metadata(self) -> None:
         metadata = json.loads((ROOT / "hacs.json").read_text())

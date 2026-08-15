@@ -12,6 +12,8 @@
   ngân hàng và dữ liệu định danh.
 - Chuẩn hóa chuỗi boolean như `"false"` khi rút gọn trạng thái QR và giữ giá trị
   âm báo hợp lệ gần nhất nếu một lần refresh tạm thời thiếu field cloud.
+- Viết lại README đầy đủ với nút cài HACS và đồng bộ metadata sang repository
+  `trankhanhduy2929-beep/tingbox-cloud-home-assistant`.
 
 ## 0.1.0 - 2026-08-14
 
