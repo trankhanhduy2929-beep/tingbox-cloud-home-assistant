@@ -9,7 +9,7 @@ from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 DEFAULT_OUTPUT = Path("/opt/apk-lab/input/tingbox/ket_qua")
 EXCLUDED_PARTS = {
     ".git",

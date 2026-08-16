@@ -383,7 +383,7 @@ class TingboxApi:
         headers = {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "User-Agent": "HomeAssistant-Tingbox/0.2.0",
+            "User-Agent": "HomeAssistant-Tingbox/0.2.1",
         }
         if authenticated:
             session = self._session

@@ -6,7 +6,7 @@ from datetime import timedelta
 
 DOMAIN = "tingbox"
 NAME = "Tingbox"
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 
 APP_CORE_BASE_URL = "https://tingbox-appcore.nextpay.vn/"
 MCMN_BASE_URL = "https://tingbox-mcmn.nextpay.vn/"

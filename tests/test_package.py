@@ -5,6 +5,13 @@ from __future__ import annotations
 import json
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+
+from homeassistant.helpers.entity import EntityCategory
+
+from custom_components.tingbox.binary_sensor import (
+    TingboxQrDefaultConfiguredSensor,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -17,7 +24,7 @@ class TingboxPackageTests(unittest.TestCase):
             (ROOT / "custom_components/tingbox/manifest.json").read_text()
         )
         self.assertEqual(manifest["domain"], "tingbox")
-        self.assertEqual(manifest["version"], "0.2.0")
+        self.assertEqual(manifest["version"], "0.2.1")
         self.assertTrue(manifest["config_flow"])
         self.assertIn("paho-mqtt==2.1.0", manifest["requirements"])
         self.assertEqual(
@@ -46,6 +53,19 @@ class TingboxPackageTests(unittest.TestCase):
         self.assertIn(
             "qr_default_configured",
             strings["entity"]["binary_sensor"],
+        )
+
+    def test_binary_sensor_does_not_use_config_category(self) -> None:
+        coordinator = SimpleNamespace(
+            config_entry=SimpleNamespace(
+                unique_id="test-account",
+                entry_id="test-entry",
+            )
+        )
+        entity = TingboxQrDefaultConfiguredSensor(coordinator)
+        self.assertEqual(
+            entity.entity_category,
+            EntityCategory.DIAGNOSTIC,
         )
 
     def test_no_compiled_or_sensitive_temp_files(self) -> None:

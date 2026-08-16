@@ -71,7 +71,7 @@ class TingboxQrDefaultConfiguredSensor(TingboxEntity, BinarySensorEntity):
     """Report whether the account has a default QR configuration."""
 
     _attr_translation_key = "qr_default_configured"
-    _attr_entity_category = EntityCategory.CONFIG
+    _attr_entity_category = EntityCategory.DIAGNOSTIC
 
     def __init__(self, coordinator) -> None:
         """Initialize the sensor."""

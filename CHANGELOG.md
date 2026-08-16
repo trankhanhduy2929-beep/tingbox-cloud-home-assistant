@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.1 - 2026-08-16
+
+- Sửa binary sensor **QR mặc định đã cấu hình** từ entity category `config`
+  sang `diagnostic`. Home Assistant không cho phép binary sensor dùng category
+  `config` và sẽ từ chối thêm entity.
+- Thêm kiểm thử hồi quy cho entity category và dựng lại gói phát hành sạch.
+
 ## 0.2.0 - 2026-08-15
 
 - Thêm công tắc cloud cho âm báo giao dịch trên ứng dụng Tingbox; entity chỉ

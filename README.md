@@ -14,8 +14,8 @@
 Custom integration **không chính thức** giúp kết nối tài khoản và loa Tingbox
 với Home Assistant qua REST API và MQTT cloud của Tingbox.
 
-> **Phiên bản:** `0.2.0`  
-> **Đã kiểm thử:** Home Assistant `2026.2.3` ngày `15/08/2026`  
+> **Phiên bản:** `0.2.1`  
+> **Đã kiểm thử:** Home Assistant `2026.2.3` ngày `16/08/2026`  
 > **Repository:** <https://github.com/trankhanhduy2929-beep/tingbox-cloud-home-assistant>
 
 ## Cài đặt nhanh bằng HACS
