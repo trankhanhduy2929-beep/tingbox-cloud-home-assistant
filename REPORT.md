@@ -1,6 +1,6 @@
 # Báo cáo phân tích Tingbox và thiết kế Home Assistant
 
-**Ngày lập:** 14/08/2026 · **Cập nhật integration:** 16/08/2026  
+**Ngày lập:** 14/08/2026 · **Cập nhật integration:** 21/08/2026  
 **Phạm vi:** APK Tingbox do người dùng cung cấp và các endpoint cloud mà tài
 khoản được phép truy cập.  
 **Kết luận kiến trúc:** custom integration; không cần add-on ở phiên bản này.

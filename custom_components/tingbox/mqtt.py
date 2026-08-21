@@ -15,6 +15,7 @@ from typing import Any
 
 import paho.mqtt.client as mqtt
 from homeassistant.core import HomeAssistant
+from homeassistant.util.ssl import client_context, client_context_no_verify
 
 from .models import TingboxMqttConfig, TingboxPayment
 
@@ -77,7 +78,7 @@ def _parse_amount(value: Any) -> int | None:
 
 async def async_validate_mqtt_tls(config: TingboxMqttConfig) -> None:
     """Validate the broker certificate without sending MQTT credentials."""
-    context = ssl.create_default_context()
+    context = client_context()
     writer: asyncio.StreamWriter | None = None
     try:
         async with asyncio.timeout(12):
@@ -132,10 +133,11 @@ class TingboxMqttManager:
             protocol=mqtt.MQTTv5,
         )
         client.username_pw_set(self._config.username, self._config.password)
-        context = ssl.create_default_context()
-        if self._allow_insecure_tls:
-            context.check_hostname = False
-            context.verify_mode = ssl.CERT_NONE
+        context = (
+            client_context_no_verify()
+            if self._allow_insecure_tls
+            else client_context()
+        )
         client.tls_set_context(context)
         client.reconnect_delay_set(min_delay=1, max_delay=300)
         client.on_connect = self._handle_connect

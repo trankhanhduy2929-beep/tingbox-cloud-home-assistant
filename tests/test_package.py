@@ -24,7 +24,7 @@ class TingboxPackageTests(unittest.TestCase):
             (ROOT / "custom_components/tingbox/manifest.json").read_text()
         )
         self.assertEqual(manifest["domain"], "tingbox")
-        self.assertEqual(manifest["version"], "0.2.1")
+        self.assertEqual(manifest["version"], "0.2.2")
         self.assertTrue(manifest["config_flow"])
         self.assertIn("paho-mqtt==2.1.0", manifest["requirements"])
         self.assertEqual(

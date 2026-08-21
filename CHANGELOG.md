@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.2 - 2026-08-21
+
+- Loại bỏ `ssl.create_default_context()` khỏi event loop khi xác minh và khởi
+  động MQTT.
+- Dùng SSL context đã cache/pre-warm từ `homeassistant.util.ssl`, gồm context
+  strict và context legacy không xác minh certificate.
+- Thêm kiểm thử hồi quy để ngăn `load_default_certs` và
+  `set_default_verify_paths` bị gọi blocking trong coroutine của integration.
+
 ## 0.2.1 - 2026-08-16
 
 - Sửa binary sensor **QR mặc định đã cấu hình** từ entity category `config`
